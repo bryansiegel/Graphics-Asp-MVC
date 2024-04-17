@@ -9,6 +9,44 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\img\AdobeStock_220257363.jpeg" />
+    <Content Remove="wwwroot\img\avataaars.svg" />
+    <Content Remove="wwwroot\img\backgrounds\7084.jpg" />
+    <Content Remove="wwwroot\img\backgrounds\dark-blue-wavy-sm.png" />
+    <Content Remove="wwwroot\img\backgrounds\dark-blue-wavy.jpg" />
+    <Content Remove="wwwroot\img\backgrounds\dark-blue-wavy.png" />
+    <Content Remove="wwwroot\img\backgrounds\dark-blue-wavy2.png" />
+    <Content Remove="wwwroot\img\backgrounds\light-blue-bg.png" />
+    <Content Remove="wwwroot\img\ccsd-logo-np.png" />
+    <Content Remove="wwwroot\img\ccsd-main-logo-white.png" />
+    <Content Remove="wwwroot\img\ccsd-main-logo-white.svg" />
+    <Content Remove="wwwroot\img\forms\blue\business-card-form-blue.png" />
+    <Content Remove="wwwroot\img\forms\blue\graphic-arts-center-quick-copy-form.png" />
+    <Content Remove="wwwroot\img\forms\blue\graphic-arts-center-work-request-form.png" />
+    <Content Remove="wwwroot\img\forms\blue\holiday-card-form-blue.png" />
+    <Content Remove="wwwroot\img\forms\business-card-order-form.jpg" />
+    <Content Remove="wwwroot\img\forms\graphic-arts-center-quick-copy-form.jpg" />
+    <Content Remove="wwwroot\img\forms\graphic-arts-center-work-request-form.jpg" />
+    <Content Remove="wwwroot\img\forms\holiday-card-order-form.jpg" />
+    <Content Remove="wwwroot\img\graphic-design-4.jpg" />
+    <Content Remove="wwwroot\img\graphics-header-2.jpg" />
+    <Content Remove="wwwroot\img\graphics-header-3.jpg" />
+    <Content Remove="wwwroot\img\graphics-header.jpg" />
+    <Content Remove="wwwroot\img\icons\business-card-form.png" />
+    <Content Remove="wwwroot\img\icons\business-form.png" />
+    <Content Remove="wwwroot\img\icons\holiday-card.png" />
+    <Content Remove="wwwroot\img\icons\quick-form-request.png" />
+    <Content Remove="wwwroot\img\icons\work-request-form.png" />
+    <Content Remove="wwwroot\img\portfolio\cabin.png" />
+    <Content Remove="wwwroot\img\portfolio\cake.png" />
+    <Content Remove="wwwroot\img\portfolio\circus.png" />
+    <Content Remove="wwwroot\img\portfolio\game.png" />
+    <Content Remove="wwwroot\img\portfolio\safe.png" />
+    <Content Remove="wwwroot\img\portfolio\submarine.png" />
+    <Content Remove="wwwroot\js\scripts.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.4" />
@@ -25,6 +63,44 @@
   <ItemGroup>
     <Folder Include="UploadedFiles\" />
     <Folder Include="Views\Dashboard\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\img\AdobeStock_220257363.jpeg" />
+    <None Include="wwwroot\img\avataaars.svg" />
+    <None Include="wwwroot\img\backgrounds\7084.jpg" />
+    <None Include="wwwroot\img\backgrounds\dark-blue-wavy-sm.png" />
+    <None Include="wwwroot\img\backgrounds\dark-blue-wavy.jpg" />
+    <None Include="wwwroot\img\backgrounds\dark-blue-wavy.png" />
+    <None Include="wwwroot\img\backgrounds\dark-blue-wavy2.png" />
+    <None Include="wwwroot\img\backgrounds\light-blue-bg.png" />
+    <None Include="wwwroot\img\ccsd-logo-np.png" />
+    <None Include="wwwroot\img\ccsd-main-logo-white.png" />
+    <None Include="wwwroot\img\ccsd-main-logo-white.svg" />
+    <None Include="wwwroot\img\forms\blue\business-card-form-blue.png" />
+    <None Include="wwwroot\img\forms\blue\graphic-arts-center-quick-copy-form.png" />
+    <None Include="wwwroot\img\forms\blue\graphic-arts-center-work-request-form.png" />
+    <None Include="wwwroot\img\forms\blue\holiday-card-form-blue.png" />
+    <None Include="wwwroot\img\forms\business-card-order-form.jpg" />
+    <None Include="wwwroot\img\forms\graphic-arts-center-quick-copy-form.jpg" />
+    <None Include="wwwroot\img\forms\graphic-arts-center-work-request-form.jpg" />
+    <None Include="wwwroot\img\forms\holiday-card-order-form.jpg" />
+    <None Include="wwwroot\img\graphic-design-4.jpg" />
+    <None Include="wwwroot\img\graphics-header-2.jpg" />
+    <None Include="wwwroot\img\graphics-header-3.jpg" />
+    <None Include="wwwroot\img\graphics-header.jpg" />
+    <None Include="wwwroot\img\icons\business-card-form.png" />
+    <None Include="wwwroot\img\icons\business-form.png" />
+    <None Include="wwwroot\img\icons\holiday-card.png" />
+    <None Include="wwwroot\img\icons\quick-form-request.png" />
+    <None Include="wwwroot\img\icons\work-request-form.png" />
+    <None Include="wwwroot\img\portfolio\cabin.png" />
+    <None Include="wwwroot\img\portfolio\cake.png" />
+    <None Include="wwwroot\img\portfolio\circus.png" />
+    <None Include="wwwroot\img\portfolio\game.png" />
+    <None Include="wwwroot\img\portfolio\safe.png" />
+    <None Include="wwwroot\img\portfolio\submarine.png" />
+    <None Include="wwwroot\js\scripts.js" />
   </ItemGroup>
 
 </Project>
