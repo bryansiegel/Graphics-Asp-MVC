@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34814.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphics-Asp-MVC", "Graphics-Asp-MVC.csproj", "{EB25F24F-4538-4DB9-882A-8D94713A862B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB25F24F-4538-4DB9-882A-8D94713A862B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB25F24F-4538-4DB9-882A-8D94713A862B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB25F24F-4538-4DB9-882A-8D94713A862B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB25F24F-4538-4DB9-882A-8D94713A862B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EAB23D78-910C-4B39-8070-D1A248534963}
+	EndGlobalSection
+EndGlobal
