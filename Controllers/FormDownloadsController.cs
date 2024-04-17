@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ namespace Graphics_Asp_MVC.Controllers
             return View(await _context.FormDownload.ToListAsync());
         }
 
-        // GET: FormDownloads/Details/5
+       
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="UploadedFiles\" />
     <Folder Include="Views\Dashboard\" />
   </ItemGroup>
 
