@@ -1,7 +1,4 @@
-﻿@* @model IEnumerable<Graphics_Asp_MVC.Models.FormDownload> *@
-
-@model ViewModel
-
+﻿@model ViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -10,13 +7,10 @@
 <section class="page-section" id="district-forms">
     <div class="container">
         <div class="row">
-
             <h2 class="page-section-heading text-center text-uppercase mb-5">
                 District Forms
             </h2>
-
 @* Index Of Forms *@
-          
             <table id="downloadsTable" class="table table-bordered table-striped shadow" style="width:100%;">
                 <thead>
                     <tr>
@@ -32,7 +26,6 @@
             }
                 </tbody>
             </table>
-
 @* District Forms *@
             <br />
             <br />
@@ -51,8 +44,6 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.FormName)
-
-                
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FormNumber)
@@ -60,13 +51,11 @@
             <td>
                 <a href="@Html.DisplayFor(modelItem => item.FormUrl)">@Html.DisplayFor(modelItem => item.FormName)</a>
             </td>
-
         </tr>
     }
     </tbody>
      </table>
      @* End District Forms *@
-
 
      @* Site Based Contracts *@
             <table id="downloadsTable" class="table table-bordered table-striped shadow" style="width:100%;">
@@ -86,7 +75,6 @@
             </table>
      @* End Site Based Contracts *@
 
-
      @* Current Evaluations *@
             <table id="downloadsTable" class="table table-bordered table-striped shadow" style="width:100%;">
                 <thead>
@@ -104,11 +92,6 @@
                 </tbody>
             </table>
      @* End Current Evaluations *@
-
-
-
-
-
      </div>
      </div>
      </section>
