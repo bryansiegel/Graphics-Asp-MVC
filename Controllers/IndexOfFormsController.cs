@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Web;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,37 +7,25 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Graphics_Asp_MVC.Data;
 using Graphics_Asp_MVC.Models;
-using System.Dynamic;
-//using AspNetCore;
-using NuGet.DependencyResolver;
 
 namespace Graphics_Asp_MVC.Controllers
 {
-    public class FormDownloadsController : Controller
+    public class IndexOfFormsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public FormDownloadsController(ApplicationDbContext context)
+        public IndexOfFormsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: FormDownloads
-        public ActionResult Index()
+        // GET: IndexOfForms
+        public async Task<IActionResult> Index()
         {
-            var formdownloads = _context.FormDownload.ToList();
-            var indexofforms = _context.IndexOfForms.ToList();
-
-            var viewModel = new ViewModel()
-            {
-                _formdownload = formdownloads,
-                _indexofforms = indexofforms
-            };
-
-            return View(viewModel);
+            return View(await _context.IndexOfForms.ToListAsync());
         }
 
-
+        // GET: IndexOfForms/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,39 +33,39 @@ namespace Graphics_Asp_MVC.Controllers
                 return NotFound();
             }
 
-            var formDownload = await _context.FormDownload
+            var indexOfForms = await _context.IndexOfForms
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (formDownload == null)
+            if (indexOfForms == null)
             {
                 return NotFound();
             }
 
-            return View(formDownload);
+            return View(indexOfForms);
         }
 
-        // GET: FormDownloads/Create
+        // GET: IndexOfForms/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: FormDownloads/Create
+        // POST: IndexOfForms/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FormType,FormNumber,FormName,FormUrl,active")] FormDownload formDownload)
+        public async Task<IActionResult> Create([Bind("Id,FormName,active")] IndexOfForms indexOfForms)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(formDownload);
+                _context.Add(indexOfForms);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(formDownload);
+            return View(indexOfForms);
         }
 
-        // GET: FormDownloads/Edit/5
+        // GET: IndexOfForms/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -86,22 +73,22 @@ namespace Graphics_Asp_MVC.Controllers
                 return NotFound();
             }
 
-            var formDownload = await _context.FormDownload.FindAsync(id);
-            if (formDownload == null)
+            var indexOfForms = await _context.IndexOfForms.FindAsync(id);
+            if (indexOfForms == null)
             {
                 return NotFound();
             }
-            return View(formDownload);
+            return View(indexOfForms);
         }
 
-        // POST: FormDownloads/Edit/5
+        // POST: IndexOfForms/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FormType,FormNumber,FormName,FormUrl,active")] FormDownload formDownload)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FormName,active")] IndexOfForms indexOfForms)
         {
-            if (id != formDownload.Id)
+            if (id != indexOfForms.Id)
             {
                 return NotFound();
             }
@@ -110,12 +97,12 @@ namespace Graphics_Asp_MVC.Controllers
             {
                 try
                 {
-                    _context.Update(formDownload);
+                    _context.Update(indexOfForms);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!FormDownloadExists(formDownload.Id))
+                    if (!IndexOfFormsExists(indexOfForms.Id))
                     {
                         return NotFound();
                     }
@@ -126,10 +113,10 @@ namespace Graphics_Asp_MVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(formDownload);
+            return View(indexOfForms);
         }
 
-        // GET: FormDownloads/Delete/5
+        // GET: IndexOfForms/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -137,34 +124,34 @@ namespace Graphics_Asp_MVC.Controllers
                 return NotFound();
             }
 
-            var formDownload = await _context.FormDownload
+            var indexOfForms = await _context.IndexOfForms
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (formDownload == null)
+            if (indexOfForms == null)
             {
                 return NotFound();
             }
 
-            return View(formDownload);
+            return View(indexOfForms);
         }
 
-        // POST: FormDownloads/Delete/5
+        // POST: IndexOfForms/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var formDownload = await _context.FormDownload.FindAsync(id);
-            if (formDownload != null)
+            var indexOfForms = await _context.IndexOfForms.FindAsync(id);
+            if (indexOfForms != null)
             {
-                _context.FormDownload.Remove(formDownload);
+                _context.IndexOfForms.Remove(indexOfForms);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool FormDownloadExists(int id)
+        private bool IndexOfFormsExists(int id)
         {
-            return _context.FormDownload.Any(e => e.Id == id);
+            return _context.IndexOfForms.Any(e => e.Id == id);
         }
     }
 }

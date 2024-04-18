@@ -4,7 +4,17 @@
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/Layouts/_Public_Layout.cshtml";
 }
+<section class="page-section" id="district-forms">
+    <div class="container">
+        <div class="row>
 
+            <h2 class=" page-section-heading text-center text-uppercase mb-5
+        ">
+                District Forms
+            </h2>
+            <p>
+                <a asp-action="Create">Create New</a>
+            </p>
 <h1>Details</h1>
 
 <div>
@@ -47,3 +57,7 @@
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+
+</div>
+</div>
+</section>

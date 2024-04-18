@@ -1,50 +1,64 @@
-﻿@model IEnumerable<Graphics_Asp_MVC.Models.FormDownload>
+﻿@* @model IEnumerable<Graphics_Asp_MVC.Models.FormDownload> *@
+
+@model ViewModel
+
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/Layouts/_Public_Layout.cshtml";
 }
+<section class="page-section" id="district-forms">
+    <div class="container">
+        <div class="row">
 
-<h1>Index</h1>
-
+            <h2 class="page-section-heading text-center text-uppercase mb-5">
+                District Forms
+            </h2>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+
+@* Index Of Forms *@
+            <table id="downloadsTable" class="table table-bordered table-striped shadow" style="width:100%;">
+                <thead>
+                    <tr>
+                        <th>Index of Forms</th>
+                    </tr>
+                </thead>
+                <tbody>
+@foreach (var form in Model._indexofforms)
+            {
+                <tr>
+                     <td><a href="#">@Html.DisplayFor(modelItem => form.FormName)</a></td>
+                </tr>
+            }
+                </tbody>
+            </table>
+
+@* District Forms *@
+ <table id="downloadsTable" class="table table-bordered table-striped shadow" style="width:100%;">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FormType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FormNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FormName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FormUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.active)
-            </th>
-            <th></th>
+            <th>Form Type</th>
+            <th>Form Number</th>
+            <th>Form Name</th>
+            <th>Active?</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+    @foreach (var item in Model._formdownload)
+    {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.FormType)
+                @Html.DisplayFor(modelItem => item.FormName)
+
+                
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FormNumber)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FormName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FormUrl)
+                            <a href="@Html.DisplayFor(modelItem => item.FormUrl)">@Html.DisplayFor(modelItem => item.FormName)</a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.active)
@@ -55,6 +69,16 @@
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
-}
+    }
     </tbody>
-</table>
+
+     </table>
+     @* End District Forms *@
+
+
+
+
+
+     </div>
+     </div>
+     </section>

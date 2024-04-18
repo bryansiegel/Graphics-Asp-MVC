@@ -4,7 +4,17 @@
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/Layouts/_Public_Layout.cshtml";
 }
+<section class="page-section" id="district-forms">
+    <div class="container">
+        <div class="row>
 
+            <h2 class=" page-section-heading text-center text-uppercase mb-5
+        ">
+                District Forms
+            </h2>
+            <p>
+                <a asp-action="Create">Create New</a>
+            </p>
 <h1>Edit</h1>
 
 <h4>FormDownload</h4>
@@ -49,7 +59,9 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-
+</div>
+</div>
+</section>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

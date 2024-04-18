@@ -11,5 +11,6 @@ namespace Graphics_Asp_MVC.Data
         {
         }
         public DbSet<Graphics_Asp_MVC.Models.FormDownload> FormDownload { get; set; } = default!;
+        public DbSet<Graphics_Asp_MVC.Models.IndexOfForms> IndexOfForms { get; set; } = default!;
     }
 }
