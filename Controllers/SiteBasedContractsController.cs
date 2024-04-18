@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Web;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,41 +7,25 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Graphics_Asp_MVC.Data;
 using Graphics_Asp_MVC.Models;
-using System.Dynamic;
-//using AspNetCore;
-using NuGet.DependencyResolver;
 
 namespace Graphics_Asp_MVC.Controllers
 {
-    public class FormDownloadsController : Controller
+    public class SiteBasedContractsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public FormDownloadsController(ApplicationDbContext context)
+        public SiteBasedContractsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: FormDownloads
-        public ActionResult Index()
+        // GET: SiteBasedContracts
+        public async Task<IActionResult> Index()
         {
-            var formdownloads = _context.FormDownload.ToList();
-            var indexofforms = _context.IndexOfForms.ToList();
-            var sitebasedcontracts = _context.SiteBasedContracts.ToList();
-            var currentevaluations = _context.CurrentEvaluations.ToList();
-
-            var viewModel = new ViewModel()
-            {
-                _formdownload = formdownloads,
-                _indexofforms = indexofforms,
-                _sitebasedcontracts = sitebasedcontracts,
-                _currentevaluations = currentevaluations,
-            };
-
-            return View(viewModel);
+            return View(await _context.SiteBasedContracts.ToListAsync());
         }
 
-
+        // GET: SiteBasedContracts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -50,39 +33,39 @@ namespace Graphics_Asp_MVC.Controllers
                 return NotFound();
             }
 
-            var formDownload = await _context.FormDownload
+            var siteBasedContracts = await _context.SiteBasedContracts
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (formDownload == null)
+            if (siteBasedContracts == null)
             {
                 return NotFound();
             }
 
-            return View(formDownload);
+            return View(siteBasedContracts);
         }
 
-        // GET: FormDownloads/Create
+        // GET: SiteBasedContracts/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: FormDownloads/Create
+        // POST: SiteBasedContracts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FormType,FormNumber,FormName,FormUrl,active")] FormDownload formDownload)
+        public async Task<IActionResult> Create([Bind("Id,FormName,active")] SiteBasedContracts siteBasedContracts)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(formDownload);
+                _context.Add(siteBasedContracts);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(formDownload);
+            return View(siteBasedContracts);
         }
 
-        // GET: FormDownloads/Edit/5
+        // GET: SiteBasedContracts/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -90,22 +73,22 @@ namespace Graphics_Asp_MVC.Controllers
                 return NotFound();
             }
 
-            var formDownload = await _context.FormDownload.FindAsync(id);
-            if (formDownload == null)
+            var siteBasedContracts = await _context.SiteBasedContracts.FindAsync(id);
+            if (siteBasedContracts == null)
             {
                 return NotFound();
             }
-            return View(formDownload);
+            return View(siteBasedContracts);
         }
 
-        // POST: FormDownloads/Edit/5
+        // POST: SiteBasedContracts/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FormType,FormNumber,FormName,FormUrl,active")] FormDownload formDownload)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FormName,active")] SiteBasedContracts siteBasedContracts)
         {
-            if (id != formDownload.Id)
+            if (id != siteBasedContracts.Id)
             {
                 return NotFound();
             }
@@ -114,12 +97,12 @@ namespace Graphics_Asp_MVC.Controllers
             {
                 try
                 {
-                    _context.Update(formDownload);
+                    _context.Update(siteBasedContracts);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!FormDownloadExists(formDownload.Id))
+                    if (!SiteBasedContractsExists(siteBasedContracts.Id))
                     {
                         return NotFound();
                     }
@@ -130,10 +113,10 @@ namespace Graphics_Asp_MVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(formDownload);
+            return View(siteBasedContracts);
         }
 
-        // GET: FormDownloads/Delete/5
+        // GET: SiteBasedContracts/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -141,34 +124,34 @@ namespace Graphics_Asp_MVC.Controllers
                 return NotFound();
             }
 
-            var formDownload = await _context.FormDownload
+            var siteBasedContracts = await _context.SiteBasedContracts
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (formDownload == null)
+            if (siteBasedContracts == null)
             {
                 return NotFound();
             }
 
-            return View(formDownload);
+            return View(siteBasedContracts);
         }
 
-        // POST: FormDownloads/Delete/5
+        // POST: SiteBasedContracts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var formDownload = await _context.FormDownload.FindAsync(id);
-            if (formDownload != null)
+            var siteBasedContracts = await _context.SiteBasedContracts.FindAsync(id);
+            if (siteBasedContracts != null)
             {
-                _context.FormDownload.Remove(formDownload);
+                _context.SiteBasedContracts.Remove(siteBasedContracts);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool FormDownloadExists(int id)
+        private bool SiteBasedContractsExists(int id)
         {
-            return _context.FormDownload.Any(e => e.Id == id);
+            return _context.SiteBasedContracts.Any(e => e.Id == id);
         }
     }
 }
