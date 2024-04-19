@@ -9,11 +9,13 @@ namespace Graphics_Asp_MVC.Controllers
             return View("~/Views/Public/Index.cshtml");
         }
 
+        [Route("form-archives")]
         public IActionResult FormsArchives()
         {
-            return View("~/Views/Public/FormsArchives.cshtml");
+            return View("~/Views/FormDownloads/Index.cshtml");
         }
 
+        [ActionName("templates-logos")]
         public IActionResult TemplatesLogos()
         {
             return View("~/Views/Public/TemplatesLogos.cshtml");
