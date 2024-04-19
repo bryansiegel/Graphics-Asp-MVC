@@ -54,7 +54,7 @@ namespace Graphics_Asp_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Form,active")] Downloads downloads)
+        public async Task<IActionResult> Create([Bind("Id,Category,Form,active")] Downloads downloads)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Graphics_Asp_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Form,active")] Downloads downloads)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Category,Form,active")] Downloads downloads)
         {
             if (id != downloads.Id)
             {
