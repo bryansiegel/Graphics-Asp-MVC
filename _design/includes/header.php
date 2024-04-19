@@ -30,11 +30,11 @@
 
         <div class="btn-toolbar text-center" role="group" aria-label="Header Buttons">
             <center>
-                <a href="http://localhost:3000/graphics-redesign/#directions" class="btn btn-dark mb-0 pr-2 btn-lg"
+                <a href="https://graphicsv2.ccsd.net/#directions" class="btn btn-dark mb-0 pr-2 btn-lg"
                    style="margin-right: 5px; background-color: #0d3a5d;border-color: #0d3a5d;" title="Contact Us"><i
                             class="fa-solid fa-circle-question"></i> How To Submit Work Requests</a>
 
-                <a href="http://localhost:3000/graphics-redesign/#graphic_request_forms"
+                <a href="https://graphicsv2.ccsd.net/#graphic_request_forms"
                    class="btn btn-info pr-2 btn-lg"
                    style="color:black; background-color: #c7d6eb;border:1px solid #c7d6eb; margin-right:5px; background-color:white; border:white;"
                    title="Graphics Request Forms"><i class="fa-solid fa-file-word"></i> Work Requests</a>

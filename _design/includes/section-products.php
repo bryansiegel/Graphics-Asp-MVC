@@ -1,8 +1,8 @@
 <section class="page-section" id="products"
          style="background-color: #f9f9f9;">
     <div class="container">
-        <h2 class="page-section-heading text-center text-uppercase mb-5">Products We Offer</h2>
-
+        <h2 class="page-section-heading text-center text-uppercase">Products We Offer</h2>
+        <h3 class="text-center">Need something not listed? Contact us.</h3>
 
         <div class="container">
             <div class="row">

@@ -19,11 +19,11 @@
                 <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3" href="#form-requests">Form -->
                 <!-- Requests</a></li> -->
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3"
-                                                     href="http://localhost:3000/graphics-redesign/district-forms.php"
-                                                     title="District Forms">District Forms</a></li>
+                                                     href="http://localhost:3000/graphics-redesign/forms-archives.php"
+                                                     title="District Forms">Forms & Archives</a></li>
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3"
-                                                     href="http://localhost:3000/graphics-redesign/district-downloads.php"
-                                                     title="District Downloads">District Downloads</a></li>
+                                                     href="http://localhost:3000/graphics-redesign/templates-logos.php"
+                                                     title="District Downloads">Templates & Logos</a></li>
                 <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 " href="#contact">Contact</a> -->
                 </li>
             </ul>
