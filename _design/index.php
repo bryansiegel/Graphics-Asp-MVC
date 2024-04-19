@@ -4,7 +4,6 @@ $title = "Graphic Arts Center";
 $header_title = "Graphic Arts Center";
 $header_sub_title = "Request Graphics, Forms and Documents";
 $header_color = "lightblue";
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
