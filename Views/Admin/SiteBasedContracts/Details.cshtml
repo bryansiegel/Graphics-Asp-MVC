@@ -1,0 +1,31 @@
+﻿@model Graphics_Asp_MVC.Models.SiteBasedContracts
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/Layouts/_Admin_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>SiteBasedContracts</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FormName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FormName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.active)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.active)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
