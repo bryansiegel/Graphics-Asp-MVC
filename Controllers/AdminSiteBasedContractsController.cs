@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Graphics_Asp_MVC.Data;
 using Graphics_Asp_MVC.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Graphics_Asp_MVC.Controllers
 {
+    [Authorize]
     public class AdminSiteBasedContractsController : Controller
     {
         private readonly ApplicationDbContext _context;
