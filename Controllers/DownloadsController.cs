@@ -10,6 +10,7 @@ using Graphics_Asp_MVC.Models;
 
 namespace Graphics_Asp_MVC.Controllers
 {
+    
     public class DownloadsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,6 +21,7 @@ namespace Graphics_Asp_MVC.Controllers
         }
 
         // GET: Downloads
+        [Route("district-downloads")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Downloads.ToListAsync());

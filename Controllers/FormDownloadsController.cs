@@ -23,6 +23,7 @@ namespace Graphics_Asp_MVC.Controllers
             _context = context;
         }
 
+        [Route("district-forms")]
         // GET: FormDownloads
         public ActionResult Index()
         {
