@@ -12978,3 +12978,6 @@ html {
         margin-top: 6.5rem !important;
     }
 }
+.sidebar .nav-item .nav-link span {
+    text-decoration: underline !important;
+}

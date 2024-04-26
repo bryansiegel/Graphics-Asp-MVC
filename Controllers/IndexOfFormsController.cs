@@ -20,6 +20,7 @@ namespace Graphics_Asp_MVC.Controllers
         }
 
         // GET: IndexOfForms
+        [Route("index-of-forms")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.IndexOfForms.ToListAsync());
