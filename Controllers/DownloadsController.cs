@@ -20,15 +20,15 @@ namespace Graphics_Asp_MVC.Controllers
             _context = context;
         }
 
-        // GET: Downloads
+        // GET: Public/Downloads
         [Route("/district-downloads/")]
         public async Task<IActionResult> Index()
         {
             return View("~/Views/Public/Downloads/Index.cshtml",await _context.Downloads.ToListAsync());
         }
 
-        // GET: Downloads/Details/5
-        [Route("/district-downloads/Details/{id}")]
+        // GET: Public/Downloads/Details/5
+        [Route("/district-downloads/details/{id}")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,14 +46,14 @@ namespace Graphics_Asp_MVC.Controllers
             return View("~/Views/Public/Downloads/Details.cshtml",downloads);
         }
 
-        // GET: Downloads/Create
+        // GET: Public/Downloads/Create
 
         public IActionResult Create()
         {
             return View("~/Views/Public/Downloads/Create.cshtml");
         }
 
-        // POST: Downloads/Create
+        // POST: Public/Downloads/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -69,7 +69,7 @@ namespace Graphics_Asp_MVC.Controllers
             return View("~/Views/Public/Downloads/Create.cshtml", downloads);
         }
 
-        // GET: Downloads/Edit/5
+        // GET: Public/Downloads/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -85,7 +85,7 @@ namespace Graphics_Asp_MVC.Controllers
             return View("~/Views/Public/Downloads/Edit.cshtml", downloads);
         }
 
-        // POST: Downloads/Edit/5
+        // POST: Public/Downloads/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -120,7 +120,7 @@ namespace Graphics_Asp_MVC.Controllers
             return View("~/Views/Public/Downloads/Edit.cshtml", downloads);
         }
 
-        // GET: Downloads/Delete/5
+        // GET: Public/Downloads/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -138,7 +138,7 @@ namespace Graphics_Asp_MVC.Controllers
             return View("~/Views/Public/Downloads/Delete.cshtml",downloads);
         }
 
-        // POST: Downloads/Delete/5
+        // POST: Public/Downloads/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

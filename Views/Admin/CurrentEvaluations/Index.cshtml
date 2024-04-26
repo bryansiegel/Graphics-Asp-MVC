@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Graphics_Asp_MVC.Models.CurrentEvaluations>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Layouts/_Admin_Layout.cshtml";
+}
+
+<h1>Current Evaluations</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create A New Evaluation</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FormName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.active)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FormName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.active)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
