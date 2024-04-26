@@ -21,13 +21,14 @@ namespace Graphics_Asp_MVC.Controllers
         }
 
         // GET: Downloads
-        [Route("district-downloads")]
+        [Route("/district-downloads/")]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Downloads.ToListAsync());
+            return View("~/Views/Public/Downloads/Index.cshtml",await _context.Downloads.ToListAsync());
         }
 
         // GET: Downloads/Details/5
+        [Route("/district-downloads/Details/{id}")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -42,13 +43,14 @@ namespace Graphics_Asp_MVC.Controllers
                 return NotFound();
             }
 
-            return View(downloads);
+            return View("~/Views/Public/Downloads/Details.cshtml",downloads);
         }
 
         // GET: Downloads/Create
+
         public IActionResult Create()
         {
-            return View();
+            return View("~/Views/Public/Downloads/Create.cshtml");
         }
 
         // POST: Downloads/Create
@@ -64,7 +66,7 @@ namespace Graphics_Asp_MVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(downloads);
+            return View("~/Views/Public/Downloads/Create.cshtml", downloads);
         }
 
         // GET: Downloads/Edit/5
@@ -80,7 +82,7 @@ namespace Graphics_Asp_MVC.Controllers
             {
                 return NotFound();
             }
-            return View(downloads);
+            return View("~/Views/Public/Downloads/Edit.cshtml", downloads);
         }
 
         // POST: Downloads/Edit/5
@@ -115,7 +117,7 @@ namespace Graphics_Asp_MVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(downloads);
+            return View("~/Views/Public/Downloads/Edit.cshtml", downloads);
         }
 
         // GET: Downloads/Delete/5
@@ -133,7 +135,7 @@ namespace Graphics_Asp_MVC.Controllers
                 return NotFound();
             }
 
-            return View(downloads);
+            return View("~/Views/Public/Downloads/Delete.cshtml",downloads);
         }
 
         // POST: Downloads/Delete/5
