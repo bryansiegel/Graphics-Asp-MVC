@@ -14,7 +14,11 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FormName)
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.FileName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.active)
@@ -26,11 +30,15 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.FormName)
+                @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.active)
+                @Html.DisplayFor(modelItem => item.FileName)
             </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.active)
+                </td>
+
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

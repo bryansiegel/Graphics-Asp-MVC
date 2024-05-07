@@ -62,10 +62,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UploadedFiles\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\img\AdobeStock_220257363.jpeg" />
     <None Include="wwwroot\img\avataaars.svg" />
     <None Include="wwwroot\img\backgrounds\7084.jpg" />
