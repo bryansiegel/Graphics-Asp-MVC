@@ -58,7 +58,7 @@ namespace Graphics_Asp_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,active,FilePath")] IndexOfForms indexOfForms)
+        public async Task<IActionResult> Create([Bind("Id,Title,active")] IndexOfForms indexOfForms)
         {
             if (ModelState.IsValid)
             {
@@ -158,69 +158,68 @@ namespace Graphics_Asp_MVC.Controllers
             return _context.IndexOfForms.Any(e => e.Id == id);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> UploadToFileSystem(List<IFormFile> files, string description)
-        {
-            foreach (var file in files)
-            {
-                var basePath = Path.Combine(Directory.GetCurrentDirectory() + "Files");
-                bool basePathExists = System.IO.Directory.Exists(basePath);
-                if (!basePathExists) Directory.CreateDirectory(basePath);
-                var fileName = Path.GetFileNameWithoutExtension(file.FileName);
-                var filePath = Path.Combine(basePath, file.FileName);
-                var extension = Path.GetExtension(file.FileName);
-                if (!System.IO.File.Exists(filePath))
-                {
-                    using (var stream = new FileStream(filePath, FileMode.Create))
-                    {
-                        await file.CopyToAsync(stream);
-                    }
-                    var fileModel = new IndexOfForms
-                    {
-                        CreatedOn = DateTime.UtcNow,
-                        FileType = file.ContentType,
-                        Extension = extension,
-                        FileName = fileName,
-                        Description = description,
-                         FilePath = filePath
-                    };
-                    _context.IndexOfForms.Add(fileModel);
-                    _context.SaveChanges();
-                }
-            }
+        //[HttpPost]
+        //public async Task<IActionResult> UploadToFileSystem(List<IFormFile> files, string description)
+        //{
+        //    foreach (var file in files)
+        //    {
+        //        var basePath = Path.Combine(Directory.GetCurrentDirectory() + "Files");
+        //        bool basePathExists = System.IO.Directory.Exists(basePath);
+        //        if (!basePathExists) Directory.CreateDirectory(basePath);
+        //        var fileName = Path.GetFileNameWithoutExtension(file.FileName);
+        //        var filePath = Path.Combine(basePath, file.FileName);
+        //        var extension = Path.GetExtension(file.FileName);
+        //        if (!System.IO.File.Exists(filePath))
+        //        {
+        //            using (var stream = new FileStream(filePath, FileMode.Create))
+        //            {
+        //                await file.CopyToAsync(stream);
+        //            }
+        //            var fileModel = new IndexOfForms
+        //            {
+        //                CreatedOn = DateTime.UtcNow,
+        //                FileType = file.ContentType,
+        //                Extension = extension,
+        //                FileName = fileName,
+        //                 FilePath = filePath
+        //            };
+        //            _context.IndexOfForms.Add(fileModel);
+        //            _context.SaveChanges();
+        //        }
+        //    }
 
-            TempData["Message"] = "File successfully uploaded to File System.";
-            return RedirectToAction("Index");
-        }
+        //    TempData["Message"] = "File successfully uploaded to File System.";
+        //    return RedirectToAction("Index");
+        //}
 
-        public async Task<IActionResult> DownloadFileFromFileSystem(int id)
-        {
+        //public async Task<IActionResult> DownloadFileFromFileSystem(int id)
+        //{
 
-            var file = await _context.IndexOfForms.Where(x => x.Id == id).FirstOrDefaultAsync();
-            if (file == null) return null;
-            var memory = new MemoryStream();
-            using (var stream = new FileStream(file.FilePath, FileMode.Open))
-            {
-                await stream.CopyToAsync(memory);
-            }
-            memory.Position = 0;
-            return File(memory, file.FileType, file.FileName + file.Extension);
-        }
+        //    var file = await _context.IndexOfForms.Where(x => x.Id == id).FirstOrDefaultAsync();
+        //    if (file == null) return null;
+        //    var memory = new MemoryStream();
+        //    using (var stream = new FileStream(file.FilePath, FileMode.Open))
+        //    {
+        //        await stream.CopyToAsync(memory);
+        //    }
+        //    memory.Position = 0;
+        //    return File(memory, file.FileType, file.FileName + file.Extension);
+        //}
 
-        public async Task<IActionResult> DeleteFileFromFileSystem(int id)
-        {
+        //public async Task<IActionResult> DeleteFileFromFileSystem(int id)
+        //{
 
-            var file = await _context.IndexOfForms.Where(x => x.Id == id).FirstOrDefaultAsync();
-            if (file == null) return null;
-            if (System.IO.File.Exists(file.FilePath))
-            {
-                System.IO.File.Delete(file.FilePath);
-            }
-            _context.IndexOfForms.Remove(file);
-            _context.SaveChanges();
-            TempData["Message"] = $"Removed {file.FileName + file.Extension} successfully from File System.";
-            return RedirectToAction("Index");
-        }
+        //    var file = await _context.IndexOfForms.Where(x => x.Id == id).FirstOrDefaultAsync();
+        //    if (file == null) return null;
+        //    if (System.IO.File.Exists(file.FilePath))
+        //    {
+        //        System.IO.File.Delete(file.FilePath);
+        //    }
+        //    _context.IndexOfForms.Remove(file);
+        //    _context.SaveChanges();
+        //    TempData["Message"] = $"Removed {file.FileName + file.Extension} successfully from File System.";
+        //    return RedirectToAction("Index");
+        //}
 
 
     }
