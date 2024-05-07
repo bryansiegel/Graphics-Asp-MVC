@@ -3,7 +3,7 @@
     public class IndexOfForms
     {
         public int Id { get; set; }
-        public string? FormName { get; set; }
+        public string? Title { get; set; }
         public bool active { get; set; }
     }
 }

@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="UploadedFiles\**" />
+    <Content Remove="UploadedFiles\**" />
+    <EmbeddedResource Remove="UploadedFiles\**" />
+    <None Remove="UploadedFiles\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\img\AdobeStock_220257363.jpeg" />
     <Content Remove="wwwroot\img\avataaars.svg" />
     <Content Remove="wwwroot\img\backgrounds\7084.jpg" />
@@ -59,10 +66,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="UploadedFiles\" />
   </ItemGroup>
 
   <ItemGroup>
