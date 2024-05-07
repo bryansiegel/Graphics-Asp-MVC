@@ -58,7 +58,7 @@ namespace Graphics_Asp_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FormName,active")] IndexOfForms indexOfForms)
+        public async Task<IActionResult> Create([Bind("Id,Title,active")] IndexOfForms indexOfForms)
         {
             if (ModelState.IsValid)
             {
