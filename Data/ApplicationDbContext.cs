@@ -15,5 +15,6 @@ namespace Graphics_Asp_MVC.Data
         public DbSet<Graphics_Asp_MVC.Models.SiteBasedContracts> SiteBasedContracts { get; set; } = default!;
         public DbSet<Graphics_Asp_MVC.Models.CurrentEvaluations> CurrentEvaluations { get; set; } = default!;
         public DbSet<Graphics_Asp_MVC.Models.Downloads> Downloads { get; set; } = default!;
+        public DbSet<Graphics_Asp_MVC.Models.FileUploadModel> FileDetails { get; set; } = default!;
     }
 }

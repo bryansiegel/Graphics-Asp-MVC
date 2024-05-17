@@ -5,7 +5,7 @@
 namespace Graphics_Asp_MVC.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class RollBackToMaster : Migration
+    public partial class fix : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
